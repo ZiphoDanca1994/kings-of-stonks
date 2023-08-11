@@ -48,6 +48,9 @@ Create dummy users for testing using the below command which takes the number of
 
     php artisan create:users {number}
 
+Install passport 
+    php artisan passport:install
+
 Start the local development server
 
     php artisan serve
