@@ -14,8 +14,8 @@ class StockTickerController extends BaseController
     {
         $validator = Validator::make($request->all(), [
             'symbol' => 'required',
-            'fromDate' => 'date|date_format:d/m/Y|before:tomorrow',
-            'toDate' => 'date|date_format:d/m/Y|before:tomorrow',
+            'fromDate' => 'date|date_format:Y-m-d|before:tomorrow',
+            'toDate' => 'date|date_format:Y-m-d|before:tomorrow',
         ]);
 
         if ($validator->fails()) {
