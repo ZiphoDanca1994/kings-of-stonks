@@ -50,7 +50,7 @@ Create dummy users for testing using the below command which takes the number of
 
 Install passport 
 
-    php artisan passport:install
+    **php artisan passport:install**
 
 Start the local development server
 
