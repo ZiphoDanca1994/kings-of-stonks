@@ -34,7 +34,7 @@ Generate a new application key
 
     php artisan key:generate
 
-Create database (**kings_of_stonks_db**) and run the database migrations (**Set the database connection in .env before migrating**)
+Create database database and run the database migrations (**Set the database connection in .env before migrating**)
 
     php artisan migrate
 
