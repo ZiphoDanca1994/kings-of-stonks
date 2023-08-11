@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $tokken =  $user->createToken('KingOfStocks')->plainTextToken;
+        $tokken =  $user->createToken('KingOfStocks')->accessToken;;
 
         return view('home', get_defined_vars());
     }

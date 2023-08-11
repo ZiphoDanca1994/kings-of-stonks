@@ -22,4 +22,4 @@ Route::post('/register', [\App\Http\Controllers\API\RegisterController::class, '
 
 Route::post('/login', [\App\Http\Controllers\API\LoginController::class, 'login']);
 
-Route::middleware('auth:sanctum')->get('/v4/quote', [\App\Http\Controllers\API\StockTickerController::class, 'index'])->name('stock.tickers');
+Route::middleware('auth:api')->get('/v4/quote', [\App\Http\Controllers\API\StockTickerController::class, 'index'])->name('stock.tickers');
