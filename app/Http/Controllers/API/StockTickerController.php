@@ -15,11 +15,17 @@ class StockTickerController extends BaseController
         $validator = Validator::make($request->all(), [
             'symbol' => 'required',
             'fromDate' => 'date|date_format:d/m/Y|before:tomorrow',
-            'toDate' => 'date|date_format:d/m/Y|after:fromDate',
+            'toDate' => 'date|date_format:d/m/Y|before:tomorrow',
         ]);
 
         if ($validator->fails()) {
             return $this->sendError('Validation Error.', $validator->errors());
+        }
+
+        if (isset($request->fromDate) && isset($request->toDate)) {
+            if ($request->fromDate > $request->toDate) {
+                return $this->sendError('Validation Error.', 'Invalid date range');
+            }
         }
 
         $query = StockTicker::query();
@@ -30,7 +36,7 @@ class StockTickerController extends BaseController
             $symbol = strtoupper($request->symbol);
 
             if (array_search($symbol, $stockTickers) == false) {
-                return $this->sendError('Error.', 'Invalid symbol');
+                return $this->sendError('Error.', 'Invalid symbol, One stock ticker symbol allowed');
             }
 
             $query->where('symbol', $symbol);
