@@ -10,7 +10,7 @@ class StockTickerService
     {
         set_time_limit(0);
 
-        $url_info = "https://financialmodelingprep.com/api/v3/quote/" . $symbols . "?apikey=4d67871d6f841274223f63eb9909b960";
+        $url_info = "https://financialmodelingprep.com/api/v3/quote/" . $symbols . "?apikey=" . env("STOCK_API_KEY");
 
         $channel = curl_init();
 
