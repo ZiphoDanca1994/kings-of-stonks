@@ -49,6 +49,7 @@ Create dummy users for testing using the below command which takes the number of
     php artisan create:users {number}
 
 Install passport 
+
     php artisan passport:install
 
 Start the local development server
@@ -65,6 +66,7 @@ npm install && npm run dev
 cp .env.example .env
 php artisan key:generate
 php artisan migrate
+php artisan passport:install
 php artisan serve
 ```
 
