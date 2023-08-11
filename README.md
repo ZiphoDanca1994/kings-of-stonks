@@ -141,7 +141,7 @@ Register API can be accessed at **returns access tocken**
 
 Login API can be accessed at **returns access tocken**
 
-    http://localhost:8000/api/register
+    http://localhost:8000/api/login
 
 
 | **Required** 	| **Key**              	| **Type**      |
