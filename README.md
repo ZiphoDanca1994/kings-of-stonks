@@ -73,7 +73,7 @@ Scheduled daily at 20:55 UTC which retrieves and store stock tickers on local da
 
 Scheduled daily at 22:00 UTC which sends the email to all the users with the latest price for the stock tickers
 
-    php artian send:email
+    php artisan send:email
 
 Emails are being send using queue, we need below command to be up and running to listen to queues and send emails
 
@@ -81,7 +81,7 @@ Emails are being send using queue, we need below command to be up and running to
 
 Scheduled daily, it deletes the stock tickers that are older than 60 days
 
-    clean:stock-tickers
+    php artisan clean:stock-tickers
 
 ----------
 
@@ -124,7 +124,6 @@ Register API can be accessed at **returns access tocken**
 
     http://localhost:8000/api/register
 
-Request headers
 
 | **Required** 	| **Key**              	| **Type**      |
 |----------	|------------------	|------------------	|
@@ -139,7 +138,6 @@ Login API can be accessed at **returns access tocken**
 
     http://localhost:8000/api/register
 
-Request headers
 
 | **Required** 	| **Key**              	| **Type**      |
 |----------	|------------------	|------------------	|
@@ -152,23 +150,15 @@ Retrieve stock price records by GET request api can now be accessed at **returns
 
     http://localhost:8000/api/v4/quote
 
-Request headers
 
 | **Required** 	| **Key**              	| **Type**      | **Default** |
 |----------	|------------------	|------------------	|-----------------|
 | Yes      	| Content-Type     	| application/json 	|                 |
 | Yes      	| X-Requested-With 	| XMLHttpRequest   	|                 |
-| Yes     	| Authorization    	| Token {token}   	|                 |
+| Yes     	| Authorization    	| Bearer {token}   	|                 |
 | Yes     	| symbol        	| string         	|                 |
 | Optional  | fromDate       	| date             	|                 |
 | Optional  | toDate       	    | date             	|                 |
 | Optional  | sort       	    | ASC            	| DESC            |
 
 ----------
-
-# NB: Oustanding
-
-1. Testing
-2. Api Auth finalize
-3. Maybe setup script
-4. configure api_key on the .env
