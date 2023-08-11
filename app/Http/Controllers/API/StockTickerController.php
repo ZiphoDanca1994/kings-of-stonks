@@ -52,9 +52,11 @@ class StockTickerController extends BaseController
 
         if (isset($request->sort) && ($request->sort !== "DESC")) {
             $query->orderBy('date', 'ASC');
-        }
+        } else {
+            $query->orderBy('date', 'DESC');
+	}
 
-        $stockTickers = $query->orderBy('date', 'DESC')->get();
+        $stockTickers = $query->get();
 
         return $this->sendResponse($stockTickers, 'Stock tickers retrieved successfully.');
     }
