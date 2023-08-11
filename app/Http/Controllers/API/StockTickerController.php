@@ -31,11 +31,11 @@ class StockTickerController extends BaseController
         $query = StockTicker::query();
 
         if (isset($request->symbol)) {
-            $stockTickers = ["AAPL", "GOOG", "SPY", "CRM", "TSLA"];
+            $stockTickers = ["AAPL","GOOG","SPY","CRM","TSLA"];
 
             $symbol = strtoupper($request->symbol);
 
-            if (array_search($symbol, $stockTickers) == false) {
+            if (array_search($symbol, $stockTickers) === false) {
                 return $this->sendError('Error.', 'Invalid symbol, One stock ticker symbol allowed');
             }
 
